@@ -1,7 +1,7 @@
 
 var homePage = require("../page-objects/homePage.js")
 
-describe("First Spec", function() {
+describe("ABC - new website tests", function() {
 
     var home;
 
@@ -26,6 +26,11 @@ describe("First Spec", function() {
     });
 
     it ("Should Validate articles in JustIn Page", function(){
-        
+            var list = browser.elements("ul[class='article-index'] li").value.length
+            console.log(list)
+            var heading = browser.elements("ul[class='article-index'] li h3").value.length
+            console.log(heading)
+            var time = browser.elements("ul[class='article-index'] li time").value.length
+            console.log(time)
     });
 });

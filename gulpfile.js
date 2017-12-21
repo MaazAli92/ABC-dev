@@ -18,7 +18,7 @@ gulp.task('selenium', function (done) {
     });
 });
 
-gulp.task('runTest', ['selenium'], function() {
+gulp.task('abcTest', ['selenium'], function() {
   return gulp.src(path.join(__dirname, 'wdio.conf.js'))
     .pipe(webdriver()).once('end', function() {
       selenium.child.kill();

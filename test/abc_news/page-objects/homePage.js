@@ -5,8 +5,13 @@ var HomePage =(function(){
         this.banner = "#header";
         this.justIn = "[href='/news/justin/']";
         this.justInSub = ".header subheader"
-        //this.guideButton = "[href='/guide.html']";
-        //this.apiButton = "[href='/api.html']";
+        this.radiourl = "http://www.abc.net.au/radionational/";
+        this.logo = "[href='/radionational/']";
+        this.article = "ul[class='article-index'] li";
+        this.head = "ul[class='article-index'] li h3";
+        this.post = "ul[class='article-index'] li time";
+        this.program = ".sf-with-ul";
+        this.subprogram = "[href='/radionational/programs/bigideas/']";
     };
 
     return HomePage;

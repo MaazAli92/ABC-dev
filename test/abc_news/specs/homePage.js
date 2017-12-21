@@ -17,7 +17,6 @@ describe("ABC - new website tests", function() {
                 expect(url).to.equal("http://www.abc.net.au/news/");
             });
     });
-
     it("Should Navigate to JustIn Page", function(){
             var title = browser.getTitle()
             console.log(title)
@@ -25,12 +24,45 @@ describe("ABC - new website tests", function() {
                 expect(title).to.be.equal("ABC News (Australian Broadcasting Corporation)")
     });
 
-    it ("Should Validate articles in JustIn Page", function(){
-            var list = browser.elements("ul[class='article-index'] li").value.length
+    it ("Should Validate articles in JustIn Page have headings", function(){
+            //await
+            var list = browser.elements(home.article).value.length
             console.log(list)
-            var heading = browser.elements("ul[class='article-index'] li h3").value.length
+            var heading = browser.elements(home.head).value.length
             console.log(heading)
-            var time = browser.elements("ul[class='article-index'] li time").value.length
-            console.log(time)
+            if (list == heading)
+            {
+                console.log("All Articles have Headings")
+            }
     });
+
+    it("Navigate to Radio National website", function(){
+        return browser.url("http://www.abc.net.au/radionational/#")
+        browser.click(home.logo)
+        browser.getUrl().then(function(url){
+            console.log(url)
+            expect(url).to.equal("http://www.abc.net.au/news/");
+        });
+    });
+
+    it("Navigate to the Program and select program from sub program menu", function(){
+        browser.click(home.program)
+        browser.click(home.subprogram)
+    });
+/*
+    it("iterate till Last program", function(){
+        return browser.url("http://www.abc.net.au/radionational/#")
+        var program = browser.elements(".at-a-glance")
+        console.log(program)
+            browser.elements('.at-a-glance', function(err, res){
+                // iterate through elements
+                res.value.forEach(function(elem) {
+                    // execute specific action
+                    browser.click(elem.Element, function(err, res) {
+                        // callback logic here
+                        // ...
+                    });
+                });
+            });
+    });*/
 });

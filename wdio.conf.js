@@ -4,14 +4,14 @@ exports.config = {
 
     specs: [
         './test/abc_news/specs/*.js'
-        //'./test/specs/*.js'
-        //'./test/abc_news/specs/*.js'
     ],
     exclude: [
     ],
     capabilities: [{
         browserName: 'firefox'
+        //browserName: 'chrome'
     }],
+    //multicapabilities:
     logLevel: 'error',
     coloredLogs: true,
     screenshotPath: './errorShots/',
@@ -30,9 +30,7 @@ exports.config = {
 		expect = chai.expect;
     },
     after: function(failures, pid) {
-        // do something
     },
     onComplete: function() {
-        // do something
     }
 };
